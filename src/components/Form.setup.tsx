@@ -1,6 +1,7 @@
 import { ref } from 'vue'
 
 type Props = {
+  title: string
   formHandler: (e: Event & { target: { value: string } }) => void
 }
 
@@ -15,11 +16,12 @@ const onChangeHandler = (e: Event) => {
 
 export default () => (
   <>
+    <h2 class="font-bold">{props.title}</h2>
     <input
       type="text"
       value={inputValue.value}
       onChange={onChangeHandler}
-      class="w-fit border border-stone-400 px-2 py-1"
+      class="mt-2 w-full border border-stone-400 px-2 py-1"
     />
   </>
 )
